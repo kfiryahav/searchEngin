@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.img-responsive {
+  height: 300px;
+  width: 324px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.img-responsive:hover {
+  transform: scale(1.05);
+}
