@@ -48,7 +48,7 @@ const Search = (props) => {
         <div className="bg-dark d-flex justify-content-center shadow sticky-top ">
             <div className="sortDiv d-flex m-2">
                 <label className=" text-light m-2">Sort:</label>
-                <select ref={sortRef} onChange={sort} className="form-select" aria-label="Default select example">
+                <select ref={sortRef} onChange={sort} style={{ width: "120px" }} className="form-select" aria-label="Default select example">
                     <option value="likes">Likes</option>
                     <option value="views">Views</option>
                     <option value="downloads">Dowloads</option>
