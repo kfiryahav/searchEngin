@@ -17,7 +17,7 @@ const Search = (props) => {
     }, []);
 
     const onFirstLoad = async () => {
-        const url = `https://pixabay.com/api/?key=15489555-318fcca1200a48f374a1ce3ea&q=yellow+flowers&image_type=photo&pretty=true`;
+        const url = `https://pixabay.com/api/?key=15489555-318fcca1200a48f374a1ce3ea&q=clock&image_type=photo&pretty=true`;
         const response = await api_call(url);
         setPictures(response.data.hits);
     }
@@ -38,6 +38,12 @@ const Search = (props) => {
         setPictures(sort);
     }
 
+    const entered = (e) => {
+        if (e.key === 'Enter') {
+            onSearch();
+        }
+    }
+
     return (<>
         <div className="bg-dark d-flex justify-content-center shadow sticky-top ">
             <div className="sortDiv d-flex m-2">
@@ -49,8 +55,8 @@ const Search = (props) => {
                 </select>
             </div>
             <div className=" col-sm-6 d-flex align-items-center">
-                <input placeholder="Search" ref={inpuRef} type="text" className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" />
-                <button className="btn btn-outline-light m-1 " type="search" id="inputGroupFileAddon04" onClick={onSearch}>Search</button>
+                <input onKeyDown={entered} placeholder="Search" ref={inpuRef} type="text" className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" />
+                <button className="btn btn-outline-light m-1" type="search" id="inputGroupFileAddon04" onClick={onSearch}>Search</button>
             </div>
         </div>
         <div className="container ">
